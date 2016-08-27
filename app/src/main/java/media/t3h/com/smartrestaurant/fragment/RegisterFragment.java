@@ -1,6 +1,7 @@
 package media.t3h.com.smartrestaurant.fragment;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
@@ -12,7 +13,9 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import media.t3h.com.smartrestaurant.R;
@@ -22,8 +25,7 @@ import media.t3h.com.smartrestaurant.R;
  */
 public class RegisterFragment extends Fragment implements View.OnClickListener  {
 
-    private static final String ACCOUNT = "Account";
-    private EditText etEmail, etPass, etRepass;
+    private EditText etEmail, etPass;
     private Button btnRegister;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
@@ -32,6 +34,10 @@ public class RegisterFragment extends Fragment implements View.OnClickListener  
 
     public void setOnClickButtonListener(OnClickButtonRegisterListener event){
         listener=event;
+    }
+
+    public RegisterFragment(FirebaseAuth auth) {
+        this.auth = auth;
     }
 
     @Nullable
@@ -57,30 +63,43 @@ public class RegisterFragment extends Fragment implements View.OnClickListener  
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_register:
-                progressBar.setVisibility(View.VISIBLE);
-                Firebase.setAndroidContext(getContext());
-                auth = FirebaseAuth.getInstance();
+                String email = etEmail.getText().toString().trim();
+                String password = etPass.getText().toString().trim();
 
-                if(etRepass.getText().toString().equals(etPass.getText().toString())) {
-                    String email = etEmail.getText().toString().trim();
-                    String password = etPass.getText().toString().trim();
-
-                    if (TextUtils.isEmpty(email)) {
-                        Toast.makeText(getContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    if (TextUtils.isEmpty(password)) {
-                        Toast.makeText(getContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-
-                    if (password.length() < 6) {
-                        Toast.makeText(getContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    progressBar.setVisibility(View.VISIBLE);
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(getContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                if (TextUtils.isEmpty(password)) {
+                    Toast.makeText(getContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (password.length() < 6) {
+                    Toast.makeText(getContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                progressBar.setVisibility(View.VISIBLE);
+                //create user
+                auth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                Toast.makeText(getContext(), "Create User With Email:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.GONE);
+                                // If sign in fails, display a message to the user. If sign in succeeds
+                                // the auth state listener will be notified and logic to handle the
+                                // signed in user can be handled in the listener.
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(getContext(), "Authentication failed." + task.getException(),
+                                            Toast.LENGTH_SHORT).show();
+                                } else {
+                                    listener.onClickListener();
+                                }
+                            }
+                        });
                 break;
             default:
                 break;

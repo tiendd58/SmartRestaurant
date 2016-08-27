@@ -6,6 +6,7 @@
     android:weightSum="6.5"
     android:gravity="bottom"
     android:paddingBottom="20dp">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,6 +48,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:paddingLeft="10dp"
+                android:inputType="textPassword"
                 android:hint="Password"
                 android:textColorHint="@color/color_hint_login"
                 android:background="@drawable/edt_bg"/>
@@ -73,6 +75,12 @@
                 android:text="Forgot Password?"
                 android:textColor="@android:color/white" />
         </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
     </FrameLayout>
     <TextView
         android:layout_width="match_parent"
