@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="CHỌN BÀN"
+        android:textColor="#76FF03"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="2"
+        android:weightSum="3"
+        android:layout_marginTop="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table1"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 1"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table2"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 2"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table3"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 3"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="2"
+        android:weightSum="3"
+        android:layout_marginTop="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table4"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 4"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table5"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 5"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table6"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 6"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_weight="2"
+        android:weightSum="3"
+        android:layout_marginTop="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table7"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 7"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table8"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 8"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:src="@drawable/table_green"
+                android:layout_gravity="center"
+                android:id="@+id/iv_table9"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="Bàn 9"
+                android:textColor="#76FF03"
+                android:textSize="17sp"
+                android:textStyle="bold"
+
+                />
+        </LinearLayout>
+    </TableRow>
+</LinearLayout>

@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <EditText
+                android:text="lethanhngoc672@gmail.com"
                 android:id="@+id/et_email"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -40,6 +41,7 @@
                 android:textColorHint="@color/color_hint_login"
                 android:background="@drawable/edt_bg"/>
             <EditText
+                android:text="harakiri"
                 android:id="@+id/et_pass"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"

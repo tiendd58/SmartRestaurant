@@ -1,5 +1,6 @@
 package media.t3h.com.smartrestaurant.activity;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +15,6 @@ import media.t3h.com.smartrestaurant.fragment.ResetPassFragment;
 
 public class MainActivity extends AppCompatActivity implements RegisterFragment.OnClickButtonRegisterListener,
         LoginFragment.OnClickButtonLoginListener, ResetPassFragment.OnClickButtonListener {
-
     private FragmentManager manager;
     private LoginFragment loginFragment;
     private RegisterFragment registerFragment;
@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements RegisterFragment.
         switch (ID){
             case LoginFragment.LOGIN:
                 Toast.makeText(this, " Dang nhap thanh cong ", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, ListTableActivity.class);
+                startActivity(intent);
                 break;
             case LoginFragment.TRANSFER_REGISTER:
                 manager.beginTransaction().show(registerFragment)
