@@ -66,27 +66,16 @@ public class ListTableActivity extends Activity implements View.OnClickListener 
                     Phần lấy dữ liệu từ Firebase ve bao gom: id, status và waiter trong bảng Table
                     rồi chuyển dữ liệu này sang bên TableInfoActivity
 
-
-
-
-
-
                  */
 
-
-                final int count = 0;
-                final String[] name = {""};
-                final String status ="status";
-                final String waiter = "waiter";
-                final Firebase rootID = root.child("Table").child("Table"+(i+1)).child("name");
-                final Firebase rootStatus = root.child("Table").child("Table"+(i+1)).child("status");
-                final Firebase rootWaiter = root.child("Table").child("Table"+(i+1)).child("waiter");
+                Firebase rootID = root.child("Table").child("Table"+(i+1)).child("id");
 
                 rootID.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        name[0] = dataSnapshot.getValue().toString();
-                        Log.i("On Data Change", name[0]);
+                        Intent intent = new Intent(ListTableActivity.this, TableInfoActivity.class);
+                        intent.putExtra(ID_TABLE, dataSnapshot.getValue().toString());
+                        startActivity(intent);
                     }
 
                     @Override
@@ -94,8 +83,7 @@ public class ListTableActivity extends Activity implements View.OnClickListener 
 
                     }
                 });
-                Log.i("O NGOAI", name[0]);
-                Toast.makeText(this, name[0]+"" , Toast.LENGTH_SHORT).show();
+
 //                if(count[0]==1) {
 //                    Intent intent = new Intent(ListTableActivity.this, TableInfoActivity.class);
 //                    Bundle bundle = new Bundle();

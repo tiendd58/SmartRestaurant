@@ -182,9 +182,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:background="@drawable/state_button_set_the_table"
+        android:background="@drawable/state_button_set_the_tables"
         android:text="@string/DAT_BAN"
         android:textColor="@android:color/white"
+        android:id="@+id/btn_book_the_table"
         />
 
 </LinearLayout>

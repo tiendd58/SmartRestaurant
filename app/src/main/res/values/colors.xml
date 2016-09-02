@@ -8,4 +8,6 @@
     <color name="bg_cover">#89000000</color>
     <color name="color_green_bg">#43A047</color>
     <color name="color_green_bg_pressed">#1B5E20</color>
+    <color name="color_red_bg">#E53935</color>
+    <color name="color_red_bg_pressed">#B71C1C</color>
 </resources>
