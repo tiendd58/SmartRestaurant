@@ -7,4 +7,5 @@
     <string name="forgot_password_msg">Forgot password</string>
     <string name="lbl_forgot_password">forgot password</string>
     <string name="description_reset_password">We just need your registered Email Id to sent you password reset instructions</string>
+    <string name="what_the_new_foods">What the new food ?</string>
 </resources>

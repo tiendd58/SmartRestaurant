@@ -1,76 +1,58 @@
 package media.t3h.com.smartrestaurant.activity;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Toast;
-
-import com.google.firebase.auth.FirebaseAuth;
+import android.support.v4.widget.DrawerLayout;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import media.t3h.com.smartrestaurant.R;
-import media.t3h.com.smartrestaurant.fragment.LoginFragment;
-import media.t3h.com.smartrestaurant.fragment.RegisterFragment;
-import media.t3h.com.smartrestaurant.fragment.ResetPassFragment;
 
-public class MainActivity extends AppCompatActivity implements RegisterFragment.OnClickButtonRegisterListener,
-        LoginFragment.OnClickButtonLoginListener, ResetPassFragment.OnClickButtonListener {
-    private FragmentManager manager;
-    private LoginFragment loginFragment;
-    private RegisterFragment registerFragment;
-    private FirebaseAuth auth;
-    private ResetPassFragment resetFragment;
-
+/**
+ * Created by Ngoc on 9/1/2016.
+ */
+public class MainActivity extends Activity implements View.OnClickListener {
+    private static final String TAG = MainActivity.class.getName();
+    private DrawerLayout mDrawer;
+    private ImageView ivMenu;
+    private TextView mTxtAboutApp, mTxtOrderTable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        auth = FirebaseAuth.getInstance();
-        manager = getSupportFragmentManager();
-        loginFragment = new LoginFragment(auth);
-        loginFragment.setOnClickButtonListener(this);
-        registerFragment = new RegisterFragment(auth);
-        registerFragment.setOnClickButtonListener(this);
-        resetFragment = new ResetPassFragment(auth);
-        resetFragment.setOnClickButtonListener(this);
-        manager.beginTransaction().add(R.id.container_login, loginFragment)
-                .add(R.id.container_login, registerFragment).add(R.id.container_login, resetFragment)
-                .show(loginFragment)
-                .hide(registerFragment)
-                .hide(resetFragment)
-                .commit();
+        initView();
+    }
+
+    private void initView() {
+        ivMenu = (ImageView) findViewById(R.id.iv_menu_drawer);
+        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mTxtAboutApp = (TextView) findViewById(R.id.txt_about_app);
+        mTxtOrderTable = (TextView) findViewById(R.id.txt_order_table);
+        ivMenu.setOnClickListener(this);
+        mTxtOrderTable.setOnClickListener(this);
+        mTxtAboutApp.setOnClickListener(this);
+
     }
 
     @Override
-    public void onClickListener() {
-        //if success
-        manager.beginTransaction().show(loginFragment)
-                .hide(registerFragment).hide(resetFragment).commit();
-    }
-
-    @Override
-    public void onClickListener(int ID) {
-        switch (ID){
-            case LoginFragment.LOGIN:
-                Toast.makeText(this, " Dang nhap thanh cong ", Toast.LENGTH_LONG).show();
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_menu_drawer:
+                mDrawer.openDrawer(Gravity.LEFT);
+                mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
+                break;
+            case R.id.txt_about_app:
+                mDrawer.closeDrawers();
+                mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+                break;
+            case R.id.txt_order_table:
                 Intent intent = new Intent(MainActivity.this, ListTableActivity.class);
                 startActivity(intent);
-                break;
-            case LoginFragment.TRANSFER_REGISTER:
-                manager.beginTransaction().show(registerFragment)
-                        .hide(loginFragment).hide(resetFragment).commit();
-                break;
-            case ResetPassFragment.BACK:
-                manager.beginTransaction().show(loginFragment)
-                        .hide(registerFragment).hide(resetFragment).commit();
-                break;
-            case ResetPassFragment.RESET:
-                manager.beginTransaction().show(loginFragment)
-                        .hide(registerFragment).hide(resetFragment).commit();
-                break;
-            case LoginFragment.TRANSFER_RESET_PASS:
-                manager.beginTransaction().show(resetFragment)
-                        .hide(registerFragment).hide(loginFragment).commit();
+                mDrawer.closeDrawers();
+                mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 break;
             default:
                 break;

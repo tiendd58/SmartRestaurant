@@ -6,4 +6,5 @@
     <color name="bg_login">#99000000</color>
     <color name="color_hint_login">#999999</color>
     <color name="bg_cover">#89000000</color>
+    <color name="color_green_bg">#43A047</color>
 </resources>
