@@ -1,7 +1,9 @@
 package media.t3h.com.smartrestaurant.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -19,6 +21,12 @@ import media.t3h.com.smartrestaurant.object.Table;
  */
 public class ListTableActivity extends Activity implements View.OnClickListener {
     public static final int NUMBER_TABLE = 9;
+    public static final String ID_TABLE = "ID_TABLE";
+    public static final String NAME_TABLE = "NAME_TABLE";
+    public static final String STATUS_TABLE = "STATUS_TABLE";
+    public static final String WAITER_TABLE = "WAITER_TABLE";
+    public static final String BUNDLE = "BUNDLE";
+
     private Firebase root;
     private ImageView[] mIVTable;
     private int[] idTable = new int[] {R.id.iv_table1,R.id.iv_table2,R.id.iv_table3,
@@ -54,11 +62,31 @@ public class ListTableActivity extends Activity implements View.OnClickListener 
     public void onClick(View view) {
         for (int i =0 ; i< NUMBER_TABLE; i++) {
             if(view.getId() == idTable[i]) {
-                Firebase rootChild = root.child("Table").child("Table"+(i+1)).child("name");
-                rootChild.addValueEventListener(new ValueEventListener() {
+                /*
+                    Phần lấy dữ liệu từ Firebase ve bao gom: id, status và waiter trong bảng Table
+                    rồi chuyển dữ liệu này sang bên TableInfoActivity
+
+
+
+
+
+
+                 */
+
+
+                final int count = 0;
+                final String[] name = {""};
+                final String status ="status";
+                final String waiter = "waiter";
+                final Firebase rootID = root.child("Table").child("Table"+(i+1)).child("name");
+                final Firebase rootStatus = root.child("Table").child("Table"+(i+1)).child("status");
+                final Firebase rootWaiter = root.child("Table").child("Table"+(i+1)).child("waiter");
+
+                rootID.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        Toast.makeText(ListTableActivity.this, dataSnapshot.getValue().toString() , Toast.LENGTH_SHORT).show();
+                        name[0] = dataSnapshot.getValue().toString();
+                        Log.i("On Data Change", name[0]);
                     }
 
                     @Override
@@ -66,7 +94,19 @@ public class ListTableActivity extends Activity implements View.OnClickListener 
 
                     }
                 });
-//                Toast.makeText(this, i+1+"" , Toast.LENGTH_SHORT).show();
+                Log.i("O NGOAI", name[0]);
+                Toast.makeText(this, name[0]+"" , Toast.LENGTH_SHORT).show();
+//                if(count[0]==1) {
+//                    Intent intent = new Intent(ListTableActivity.this, TableInfoActivity.class);
+//                    Bundle bundle = new Bundle();
+//                    bundle.putString(NAME_TABLE, name[0]);
+//                    bundle.putString(STATUS_TABLE, status);
+//                    bundle.putString(WAITER_TABLE, waiter);
+//                    intent.putExtra(BUNDLE, bundle);
+//                    startActivity(intent);
+//                }
+
+
             }
 
         }

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Thông tin về bàn ăn"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/txt_name_table"
+        android:gravity="center"
+        android:background="@color/color_green_bg"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:layout_gravity="center_horizontal"
+        android:weightSum="5"
+        >
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40sp"
+            android:layout_weight="1"
+            android:src="@drawable/table_green"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10sp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Table 1"
+            android:id="@+id/txt_table_name"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:textColor="@color/color_green_bg"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:weightSum="3"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2.2"
+                    android:layout_height="wrap_content"
+                    android:text="Tình trạng: "
+                    android:textColor="@color/color_green_bg"
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="trống"
+                    android:textColor="@color/color_green_bg"
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    android:id="@+id/txt_status_table"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2.2"
+                    android:layout_height="wrap_content"
+                    android:text="Số chỗ: "
+                    android:textColor="@color/color_green_bg"
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textColor="@color/color_green_bg"
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    android:id="@+id/txt_number_seat_table"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="."
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="30sp"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2.2"
+                    android:layout_height="wrap_content"
+                    android:text="Phục vụ: "
+                    android:textColor="@color/color_green_bg"
+                    android:textSize="14sp"
+                    android:gravity="left"
+                    />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="Ngọc Lê"
+                    android:textColor="@color/color_green_bg"
+                    android:textSize="15sp"
+                    android:gravity="left"
+                    android:id="@+id/txt_waiter_of_table"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/state_button_set_the_table"
+        android:text="@string/DAT_BAN"
+        android:textColor="@android:color/white"
+        />
+
+</LinearLayout>
