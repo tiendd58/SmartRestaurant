@@ -18,7 +18,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private static final String TAG = MainActivity.class.getName();
     private DrawerLayout mDrawer;
     private ImageView ivMenu;
-    private TextView mTxtAboutApp, mTxtOrderTable;
+    private TextView mTxtAboutApp, mTxtOrderTable, mTxtListFood;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +31,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         mTxtAboutApp = (TextView) findViewById(R.id.txt_about_app);
         mTxtOrderTable = (TextView) findViewById(R.id.txt_order_table);
+        mTxtListFood = (TextView) findViewById(R.id.txt_list_food);
         ivMenu.setOnClickListener(this);
         mTxtOrderTable.setOnClickListener(this);
         mTxtAboutApp.setOnClickListener(this);
+        mTxtListFood.setOnClickListener(this);
 
     }
 
@@ -53,6 +55,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.txt_order_table:
                 Intent intent = new Intent(MainActivity.this, ListTableActivity.class);
                 startActivity(intent);
+                mDrawer.closeDrawers();
+                mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+                break;
+            case R.id.txt_list_food:
+                Intent intent3 = new Intent(MainActivity.this, IntroFoodDrinkDessertActivity.class);
+                startActivity(intent3);
                 mDrawer.closeDrawers();
                 mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 break;
