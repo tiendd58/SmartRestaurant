@@ -22,10 +22,6 @@ import media.t3h.com.smartrestaurant.object.Table;
 public class ListTableActivity extends Activity implements View.OnClickListener {
     public static final int NUMBER_TABLE = 9;
     public static final String ID_TABLE = "ID_TABLE";
-    public static final String NAME_TABLE = "NAME_TABLE";
-    public static final String STATUS_TABLE = "STATUS_TABLE";
-    public static final String WAITER_TABLE = "WAITER_TABLE";
-    public static final String BUNDLE = "BUNDLE";
 
     private Firebase root;
     private ImageView[] mIVTable;

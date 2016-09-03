@@ -45,6 +45,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
                 break;
             case R.id.txt_about_app:
+                Intent intent2 = new Intent(MainActivity.this, WelcomeActivity.class);
+                startActivity(intent2);
                 mDrawer.closeDrawers();
                 mDrawer.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 break;

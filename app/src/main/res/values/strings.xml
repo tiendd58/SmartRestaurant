@@ -9,4 +9,22 @@
     <string name="description_reset_password">We just need your registered Email Id to sent you password reset instructions</string>
     <string name="what_the_new_foods">What the new food ?</string>
     <string name="DAT_BAN">Đặt bàn</string>
+
+    <string name="slide_1_title">Xin chào!</string>
+    <string name="slide_1_desc">Đây là một sản phẩm đến từ 2 sinh viên trường Đại học Công Nghệ- ĐHQGHN</string>
+
+    <string name="slide_2_title">Sáng tạo</string>
+    <string name="slide_2_desc">Ứng dụng là 1 sự sáng tạo cho nhu cầu ăn uống của người dùng</string>
+
+    <string name="slide_3_title">Linh hoạt</string>
+    <string name="slide_3_desc">Ứng dụng cho phép bạn sử dụng một cách linh hoạt, phục vụ nhu cầu ăn uống</string>
+
+    <string name="slide_4_title">Thông minh</string>
+    <string name="slide_4_desc">Ứng dụng có khả năng tương tác thông minh, kết nối đến các nhà hàng</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
 </resources>
